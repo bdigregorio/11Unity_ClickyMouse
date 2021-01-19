@@ -19,6 +19,14 @@ public class Target : MonoBehaviour {
         targetRigidbody.AddTorque(RandomTorque(), RandomTorque(), RandomTorque(), ForceMode.Impulse); 
     }
 
+    private void OnMouseDown() {
+        Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        Destroy(gameObject);   
+    }
+
     private Vector3 RandomSpawnPos() {
         return new Vector3(Random.Range(-xBounds, xBounds), ySpawnPos);
     }
