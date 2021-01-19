@@ -303,7 +303,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -57.86029, w: 0}
   m_textInfo:
     textComponent: {fileID: 274516475}
     characterCount: 7
@@ -818,6 +818,7 @@ MonoBehaviour:
   - {fileID: 5685735210905469556, guid: 491ec13391ee04740b5c70a504f7d6ee, type: 3}
   - {fileID: 1044381327405117323, guid: a4adb241973ccc54582cd0bd37f62699, type: 3}
   - {fileID: 8451591218229114092, guid: b5549c8c4d2c1a840b0dff78c3dbb27b, type: 3}
+  scoreText: {fileID: 274516475}
 --- !u!4 &1688096027
 Transform:
   m_ObjectHideFlags: 0
