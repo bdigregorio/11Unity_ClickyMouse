@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Target : MonoBehaviour {
     private Rigidbody targetRigidbody;
+    private GameManager gameManager;
+
+    public int pointValue;
+    public ParticleSystem explosionParticle;
 
     private float xBounds = 4.25f;
     private float ySpawnPos = -2.0f;
@@ -13,6 +17,7 @@ public class Target : MonoBehaviour {
 
     private void Start() {
         targetRigidbody = GetComponent<Rigidbody>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 
         transform.position = RandomSpawnPos();
         targetRigidbody.AddForce(RandomForce(), ForceMode.Impulse);
@@ -21,6 +26,8 @@ public class Target : MonoBehaviour {
 
     private void OnMouseDown() {
         Destroy(gameObject);
+        Instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation);
+        gameManager.UpdateScore(pointValue);
     }
 
     private void OnTriggerEnter(Collider other) {
