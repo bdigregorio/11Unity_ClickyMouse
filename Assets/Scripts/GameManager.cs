@@ -41,9 +41,9 @@ public class GameManager : MonoBehaviour {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public void StartGame() {
+    public void StartGame(float spawnDelay) {
         score = 0;
-        spawnRate = 1.0f;
+        spawnRate = spawnDelay;
         StartCoroutine(SpawnTarget());
         UpdateScore(0);
         titleScreen.SetActive(false);

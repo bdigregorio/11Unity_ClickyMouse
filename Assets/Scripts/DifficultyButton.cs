@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class DifficultyButton : MonoBehaviour {
     private Button button;
     private GameManager gameManager;
+    public float spawnDelay;
 
     private void Start() {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
@@ -20,6 +21,6 @@ public class DifficultyButton : MonoBehaviour {
 
     private void SetDifficulty() {
         Debug.Log($"{gameObject.name} was clicked");
-        gameManager.StartGame();
+        gameManager.StartGame(spawnDelay);
     }
 }
