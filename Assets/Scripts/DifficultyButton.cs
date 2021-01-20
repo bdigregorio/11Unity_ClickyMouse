@@ -6,8 +6,10 @@ using UnityEngine.UI;
 
 public class DifficultyButton : MonoBehaviour {
     private Button button;
+    private GameManager gameManager;
 
     private void Start() {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         button = GetComponent<Button>();
         button.onClick.AddListener(SetDifficulty);
     }
@@ -18,5 +20,6 @@ public class DifficultyButton : MonoBehaviour {
 
     private void SetDifficulty() {
         Debug.Log($"{gameObject.name} was clicked");
+        gameManager.StartGame();
     }
 }

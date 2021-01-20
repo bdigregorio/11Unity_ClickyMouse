@@ -10,18 +10,13 @@ using TMPro;
 
 public class GameManager : MonoBehaviour {
     public List<GameObject> targets;
+    public GameObject titleScreen;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
     public Button restartButton;
     public bool gameIsActive = true;
-    private int score = 0;
-    private float spawnRate = 1.0f;
-
-
-    private void Start() {
-        StartCoroutine(SpawnTarget());
-        UpdateScore(0);
-    }
+    private int score;
+    private float spawnRate;
 
     private IEnumerator SpawnTarget() {
         while (gameIsActive) {
@@ -44,5 +39,13 @@ public class GameManager : MonoBehaviour {
 
     public void RestartGame() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void StartGame() {
+        score = 0;
+        spawnRate = 1.0f;
+        StartCoroutine(SpawnTarget());
+        UpdateScore(0);
+        titleScreen.SetActive(false);
     }
 }
